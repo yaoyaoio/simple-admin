@@ -1,0 +1,16 @@
+{
+  "baseUrl": "./",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["src/*"],
+      "consts/*": ["src/consts/*"],
+      "utils/*": ["src/utils/*"],
+      "pages/*": ["src/pages/*"],
+      "components/*": ["src/components/*"]
+    },
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

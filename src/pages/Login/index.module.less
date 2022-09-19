@@ -1,0 +1,138 @@
+// Color variables (appears count calculates by raw css)
+@color0: #ffffff; // Appears 3 times
+
+// Width variables (appears count calculates by raw css)
+@width2: 100%; // Appears 3 times
+@width4: 50%; // Appears 2 times
+
+// Height variables (appears count calculates by raw css)
+@height2: 100%; // Appears 4 times
+
+.main {
+  height: @height2;
+
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: .875rem;
+    box-sizing: border-box;
+    zoom: 1;
+    overflow: auto;
+    min-height: 766px;
+    padding-top: 4.5rem;
+    padding-bottom: 2.875rem;
+    justify-content: center;
+    background-color: #eff4f9;
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 1px 4px 0 rgba(38, 38, 38, .1);
+      color: #1f1f1f;
+      z-index: 100000;
+
+      .logo {
+        margin: 0 34px 0 40px;
+        position: relative;
+
+        &::after {
+          color: #f0f0f0;
+          content: '|';
+          height: 20px;
+          position: absolute;
+          right: -17px;
+          top: 50%;
+          transform: translate(0, -50%);
+          width: 1px;
+        }
+
+        .img {
+          display: block;
+          height: 34px;
+          width: 7.5625rem;
+        }
+      }
+    }
+    .content {
+      box-sizing: border-box;
+      height: 472px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: calc((100vh - 470px) / 3);
+      text-align: center;
+      width: 984px;
+
+      .login-left {
+        float: left;
+        height: @height2;
+        width: @width4;
+      }
+
+      .login-right {
+        background-color: @color0;
+        float: right;
+        height: @height2;
+        text-align: center;
+        width: @width4;
+
+        .login-title {
+          padding: 60px 10px 10px;
+        }
+
+        .login-title-text {
+          color: #151515;
+          font-size: 21px;
+          font-weight: 400;
+          letter-spacing: 0;
+        }
+
+        .login-title-message {
+          color: #999999;
+          line-height: 17px;
+        }
+      }
+    }
+    .footer {
+      .copyright {
+        bottom: 1.5rem;
+        color: #8c8c8c;
+        font-size: 0.875rem;
+        left: 50%;
+        line-height: 22px;
+        position: absolute;
+        transform: translate(-50%);
+      }
+    }
+  }
+
+
+
+}
+
+.login-form {
+  margin: 22px;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+
+  .login-form-button {
+    border-radius: 1px;
+    color: @color0;
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    width: @width2;
+  }
+}

@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import {Provider} from 'react-redux'
+import {BrowserRouter} from 'react-router-dom'
+import {ConfigProvider, message} from 'antd'
+import zhCN from 'antd/es/locale/zh_CN'
+import moment from "moment"
+import 'moment/locale/zh-cn'
+import store from './store'
+import Routes from "./routes"
+import 'antd/dist/antd.min.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+moment.locale('zh-cn')
+
+message.config({maxCount: 1})
+
+const getUserConfirmation = (message, callback) => {
+  console.log("getUserConfirmation", message, callback)
+  callback(true)
 }
 
-export default App;
+export const ROUTE_BASE = ''
+
+const App = () => {
+  return (
+    <ConfigProvider locale={zhCN}>
+      <Provider store={store}>
+        <BrowserRouter
+          basename={ROUTE_BASE}
+          getUserConfirmation={getUserConfirmation}>
+          <Routes/>
+        </BrowserRouter>
+      </Provider>
+    </ConfigProvider>
+  )
+}
+
+export default App

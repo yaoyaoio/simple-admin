@@ -24,16 +24,12 @@ const Index = (props) => {
   const [currentBread, setCurrentBread] = useState(null);
 
   useEffect(() => {
-    console.log("---current pathname", history.location.pathname)
-    
     //获取当前url路径
     let currentPathname = history.location.pathname;
     
     //获取当前面包屑对象，并取出title
     const path = arr.find(item => item.path === currentPathname)
     setCurrentBread(path)
-
-    console.log(currentBread,777)
   }, [history.location])
 
   return (
